@@ -4,6 +4,9 @@ exports.default = {
   output: {
     filename: 'app.bundle.js'
   },
+  devServer: {
+    open: true
+  },
   module: {
     rules: [
       {
