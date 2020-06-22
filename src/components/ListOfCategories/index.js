@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { List, Item } from './styles'
 import { Category } from '../Category'
 
 export const ListOfCategories = () => {
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    fetch('')
+      .then(res => res.json())
+      .then(data => setCategories(data))
+  })
+
   return (
     <List>
       {
-        [1, 2, 3].map(category => <Item key={category}><Category /></Item>)
+        categories.map(category => <Item key={category}><Category /></Item>)
       }
     </List>
   )
