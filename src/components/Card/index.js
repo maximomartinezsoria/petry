@@ -1,22 +1,35 @@
 import React from 'react'
-import { ImageWrapper, Image, Button } from './styles'
-import { MdFavoriteBorder } from 'react-icons/md'
+import { ImageWrapper, Image, Button, Article } from './styles'
+import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
+import { useLocalStorage } from '../../hooks/useLocalStorage'
+import { useLazyLoad } from '../../hooks/useLazyLoad'
 
 const DEFAULT_IMAGE = 'https://i.imgur.com/dJa0Hpl.jpg'
 
 export const Card = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
-  return (
-    <article>
-      <a href={id}>
-        <ImageWrapper>
-          <Image src={src} />
-        </ImageWrapper>
-      </a>
+  const key = `like-${id}`
+  const [liked, setLiked] = useLocalStorage(key, false)
 
-      <Button>
-        <MdFavoriteBorder size="32px" />
-        {likes} likes
-      </Button>
-    </article>
+  const [show, card] = useLazyLoad()
+
+  const Icon = liked ? MdFavorite : MdFavoriteBorder
+
+  return (
+    <Article ref={card}>
+      { show &&
+        <>
+          <a href={`?detail/${id}`}>
+            <ImageWrapper>
+              <Image src={src} />
+            </ImageWrapper>
+          </a>
+
+          <Button onClick={() => setLiked(!liked)}>
+            <Icon size="32px" />
+            {likes} likes
+          </Button>
+        </>
+      }
+    </Article>
   )
 }
