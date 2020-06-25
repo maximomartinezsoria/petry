@@ -2,10 +2,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 exports.default = {
   output: {
-    filename: 'app.bundle.js'
+    filename: 'app.bundle.js',
+    publicPath: '/'
   },
   devServer: {
-    open: true
+    open: true,
+    historyApiFallback: true
   },
   module: {
     rules: [

@@ -1,8 +1,10 @@
 import React from 'react'
 import { ImageWrapper, Image, Button, Article } from './styles'
-import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { useLazyLoad } from '../../hooks/useLazyLoad'
+import { FavButton } from '../FavButton'
+import { ToggleLikeMutation } from '../../containers/ToggleLikeMutation'
+import { Link } from '@reach/router'
 
 const DEFAULT_IMAGE = 'https://i.imgur.com/dJa0Hpl.jpg'
 
@@ -12,22 +14,27 @@ export const Card = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
 
   const [show, card] = useLazyLoad()
 
-  const Icon = liked ? MdFavorite : MdFavoriteBorder
-
   return (
     <Article ref={card}>
       { show &&
         <>
-          <a href={`?detail/${id}`}>
+          <Link to={`/detail/${id}`}>
             <ImageWrapper>
               <Image src={src} />
             </ImageWrapper>
-          </a>
+          </Link>
+          <ToggleLikeMutation>
+            {
+              (toggleLike) => {
+                const handleFavClick = () => {
+                  !liked && toggleLike({ variables: { input: { id } } })
+                  setLiked(!liked)
+                }
 
-          <Button onClick={() => setLiked(!liked)}>
-            <Icon size="32px" />
-            {likes} likes
-          </Button>
+                return <FavButton liked={liked} likes={likes} onClick={handleFavClick} />
+              }
+            }
+          </ToggleLikeMutation>
         </>
       }
     </Article>
