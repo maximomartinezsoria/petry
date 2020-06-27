@@ -1,9 +1,40 @@
 {
   "users": [
     {
+      "id": "7ec3d2f0-641e-11e9-9d5d-1b8ad05606d1",
+      "password": "$2b$10$RNCVsIxNLKP8Gl.BPoedXuwGczl527UfsLDYcb.9V856ng4kxULrS",
+      "favs": [
+        "18",
+        "1"
+      ],
+      "avatar": "https://gravatar.com/avatar/8e04be7dab487d77f16969fd3e0d45d4",
+      "email": "miduga@gmail.com"
+    },
+    {
+      "id": "a882e1d0-6428-11e9-9b1f-8980b7d40890",
+      "password": "$2b$10$BffxqFIacmPkKr2VZgyu7.r0nMmCMbL3nNw3CdWLpKVSKWkUAQGJS",
+      "favs": [
+        "18",
+        "16",
+        "1",
+        "15"
+      ],
+      "avatar": "https://gravatar.com/avatar/3bccd59be0a57b39bdd9b2760702795e",
+      "email": "dani@gmail.com"
+    },
+    {
+      "id": "182452d0-b8b0-11ea-9ecc-914111790bd2",
+      "password": "$2b$10$YSxGxmo3NM0TUmC/iLmFxO5fsTPm02pZHoQfyZ47rV1ulbrKpOSU2",
+      "favs": [],
+      "avatar": "https://gravatar.com/avatar/22519a38e27808e2b956ab7a8e1ee285",
+      "email": "dsfsdf@dsd.com"
+    },
+    {
       "id": "c55f5470-b8b2-11ea-9ecc-914111790bd2",
       "password": "$2b$10$Cd4bsfjQK3Uh.lMnHlrY.OnO42kOfUj24kL4UH9PuP8x1vMzSihBu",
-      "favs": [],
+      "favs": [
+        "1"
+      ],
       "avatar": "https://gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028",
       "email": "admin@admin.com"
     }
@@ -58,7 +89,7 @@
       "categoryId": 1,
       "src": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
       "userId": 1,
-      "likes": 45
+      "likes": 46
     },
     {
       "id": 15,
