@@ -5,6 +5,10 @@ import { Home } from './pages/Home'
 import { Detail } from './pages/Detail'
 import { Router } from '@reach/router'
 import { NavBar } from './components/NavBar'
+import { Favs } from './pages/Favs'
+import { User } from './pages/User'
+import { Guest } from './pages/Guest'
+import Context from './Context'
 
 export const App = () => {
   return (
@@ -16,6 +20,20 @@ export const App = () => {
         <Home path="/pet/:categoryId" />
         <Detail path="/detail/:detailId" />
       </Router>
+      <Context.Consumer>
+        {
+          ({ isAuth }) =>
+            isAuth
+              ? <Router>
+                <Favs path="/favs" />
+                <User path="/user" />
+              </Router>
+              : <Router>
+                <Guest path="/favs" />
+                <Guest path="/user" />
+              </Router>
+        }
+      </Context.Consumer>
       <NavBar />
     </>
   )

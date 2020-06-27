@@ -1,26 +1,11 @@
 {
   "users": [
     {
-      "id": "7ec3d2f0-641e-11e9-9d5d-1b8ad05606d1",
-      "password": "$2b$10$RNCVsIxNLKP8Gl.BPoedXuwGczl527UfsLDYcb.9V856ng4kxULrS",
-      "favs": [
-        "18",
-        "1"
-      ],
-      "avatar": "https://gravatar.com/avatar/8e04be7dab487d77f16969fd3e0d45d4",
-      "email": "miduga@gmail.com"
-    },
-    {
-      "id": "a882e1d0-6428-11e9-9b1f-8980b7d40890",
-      "password": "$2b$10$BffxqFIacmPkKr2VZgyu7.r0nMmCMbL3nNw3CdWLpKVSKWkUAQGJS",
-      "favs": [
-        "18",
-        "16",
-        "1",
-        "15"
-      ],
-      "avatar": "https://gravatar.com/avatar/3bccd59be0a57b39bdd9b2760702795e",
-      "email": "dani@gmail.com"
+      "id": "c55f5470-b8b2-11ea-9ecc-914111790bd2",
+      "password": "$2b$10$Cd4bsfjQK3Uh.lMnHlrY.OnO42kOfUj24kL4UH9PuP8x1vMzSihBu",
+      "favs": [],
+      "avatar": "https://gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028",
+      "email": "admin@admin.com"
     }
   ],
   "categories": [
