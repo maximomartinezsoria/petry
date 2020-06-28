@@ -4,9 +4,10 @@ import { App } from './App'
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 import Context from './Context'
+import { url } from './helpers'
 
 const client = new ApolloClient({
-  uri: 'https://petry-server.vercel.app//graphql',
+  uri: `${url}/graphql`,
   request: operation => {
     const token = sessionStorage.getItem('token')
     const authorization = token ? `Bearer ${token}` : ''
