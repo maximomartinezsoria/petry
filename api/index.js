@@ -4,9 +4,6 @@ const { ApolloServer } = require('apollo-server-express')
 const { resolvers, typeDefs } = require('./schema')
 const jwt = require('express-jwt')
 
-// this is not secure! this is for dev purposes
-process.env.JWT_SECRET = process.env.JWT_SECRET || 'somereallylongsecretkey'
-
 const PORT = process.env.PORT || 3500
 const app = express()
 const { categories } = require('./db.json')
@@ -22,8 +19,8 @@ const auth = jwt({
 require('./adapter')
 
 const server = new ApolloServer({
-  introspection: true, // do this only for dev purposes
-  playground: true, // do this only for dev purposes
+  // introspection: true, // do this only for dev purposes
+  // playground: true, // do this only for dev purposes
   typeDefs,
   resolvers,
   context: ({ req }) => {

@@ -6,6 +6,7 @@
   "scripts": {
     "start:api": "NODE_ENV=production node index.js",
     "dev:api": "nodemon index.js --ignore db.json",
+    "build": "start:api"
   },
   "author": "",
   "license": "ISC",
