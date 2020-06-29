@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "cypress open"
   },
   "keywords": [],
   "author": "Maximo Martinez Soria <maximo.martinezsoria@gmail.com>",
