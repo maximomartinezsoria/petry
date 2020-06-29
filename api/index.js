@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3500
 const app = express()
 const { categories } = require('./db.json')
 
-app.use(cors({ origin: 'https://petry.vercel.app' }))
+app.use(cors({ origin: process.env.APP_ORIGIN }))
 
 // auth middleware
 const auth = jwt({
