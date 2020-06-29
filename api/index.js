@@ -3,8 +3,10 @@ const cors = require('cors')
 const { ApolloServer } = require('apollo-server-express')
 const { resolvers, typeDefs } = require('./schema')
 const jwt = require('express-jwt')
+require('dotenv').config()
 
 const PORT = process.env.PORT || 3500
+const PRODUCTION = process.env.NODE_ENV === 'production'
 const app = express()
 const { categories } = require('./db.json')
 
@@ -19,8 +21,8 @@ const auth = jwt({
 require('./adapter')
 
 const server = new ApolloServer({
-  // introspection: true, // do this only for dev purposes
-  // playground: true, // do this only for dev purposes
+  introspection: !PRODUCTION, // do this only for dev purposes
+  playground: !PRODUCTION, // do this only for dev purposes
   typeDefs,
   resolvers,
   context: ({ req }) => {
